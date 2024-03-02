@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="antialiased">
+        <div class="relative flex items-top justify-center min-h-screen bg-w-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+                <div  class="mt-8 bg-w-100 dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                    <div  id="targetDiv" class="flex items-center p-4 w-[920px]">
+                        <div class="w-3/12">
+                            <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{ data['poster_path'] }}" alt="Poster" class="rounded ">
+                        </div>
+                        <div class="w-9/12">
+                            <div class="ml-5">
+                                <h2 class="text-2xl text-white font-semibold mb-2">{{ data['title'] }} ({{ data['release_date'][:4] }})</h2>
+                                <div class="mb-1 flex mb-4 sm:flex-nowrap flex-wrap">
+                                    {% for genre in data['genres'] %}
+                                        <span class="text-sm text-white">{{ genre['name'] }}</span>
+                                        {% if loop.index < loop.length %}
+                                            <span class="mx-2 flex items-center text-white">•</span>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="flex items-center space-x-2 tracking-wide pb-1">
+                                    <h1 class="text-white">Release Date</h1>
+                                    <p class="leading-6 text-sm text-white">{{ data['release_date'] }}</p>
+                                </div>
+                                <div class="flex items-center space-x-2 tracking-wide pb-1">
+                                    <h1 class="text-white">Rating</h1>
+                                    <p class="leading-6 text-sm text-white">{{ data['vote_average'] }}</p>
+                                </div>
+                                <div class="flex items-center space-x-2 tracking-wide pb-1">
+                                    <h1 class="text-white">Duration</h1>
+                                    <p class="leading-6 text-sm text-white">{{ data['runtime'] }} min</p>
+                                </div>
+                                <p class="leading-6 mt-5 text-white">{{ data['overview'] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

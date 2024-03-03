@@ -1,8 +1,10 @@
 # Telegram Bot - Movie Card Generator Using TMDB API
 
-This Telegram bot integrates with the TMDB API (The Movie Database) to fetch movie data based on user prompts. It generates a movie card using a simple web template and sends it back to the user. Please note that the bot is currently unstable and has several known issues. However, it is intended to be maintained and improved in the future.
+This Telegram bot integrates with the TMDB API (The Movie Database) to fetch movie data based on user prompts. It generates a movie card using a simple web template and sends it back to the user. 
 
-#Example
+# Please note that the bot is currently unstable and has several known issues. However, it is intended to be maintained and improved in the future.
+
+# Example
 ![Screenshot](Screenshot_20240302_205513_Telegram.jpg)
 
 ## Prerequisites
